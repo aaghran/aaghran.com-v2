@@ -30,28 +30,16 @@ export default function ProjectDetails({ project }) {
         </section>
       )}
 
+      {project.screenshots && project.screenshots.length > 0 && (
       <section className="section reveal">
          <h2 style={{ marginBottom: '1.5rem' }}>Gallery</h2>
-         {(!project.screenshots || project.screenshots.length === 0) ? (
-            <div className="screenshot-placeholder" style={{ 
-              border: '1px dashed var(--border-color)', 
-              borderRadius: '12px', 
-              padding: '4rem 1.5rem', 
-              textAlign: 'center',
-              backgroundColor: 'rgba(255,255,255,0.02)'
-            }}>
-               <i className="fa-regular fa-image" style={{ fontSize: '2.5rem', color: 'var(--text-muted)', marginBottom: '1rem' }}></i>
-               <h3 style={{ fontSize: '1.1rem', color: 'var(--text-lighter)' }}>No screenshots yet</h3>
-               <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Upload images to `assets/` and add them to the screenshots array in `data.js` to render them here.</p>
-            </div>
-         ) : (
-           <div className="gallery-grid" style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-              {project.screenshots.map((img, i) => (
-                <img src={img} alt={`${project.title} screenshot ${i+1}`} key={i} style={{ width: '100%', borderRadius: '12px', border: '1px solid var(--border-color)' }} />
-              ))}
-           </div>
-         )}
+         <div className="gallery-grid" style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+            {project.screenshots.map((img, i) => (
+              <img src={img} alt={`${project.title} screenshot ${i+1}`} key={i} style={{ width: '100%', borderRadius: '12px', border: '1px solid var(--border-color)' }} />
+            ))}
+         </div>
       </section>
+      )}
     </div>
   );
 }

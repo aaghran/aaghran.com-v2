@@ -15,7 +15,7 @@ export default function AboutMe({ setActiveTab }) {
             <h1>Aaghran Ghosh</h1>
             <p className="subtitle" style={{ whiteSpace: 'pre-line' }}>
               I scope and build the AI layer.<br/>
-              MCP integrations, agentic pipelines, NLS features — and the product thinking around them.
+              MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.
             </p>
             <nav className="social-nav">
               <a href="https://linkedin.com/in/aaghran" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin icon-sm"></i></a>
