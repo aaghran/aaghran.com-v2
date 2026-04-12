@@ -1,13 +1,8 @@
 export default function ProjectDetails({ project }) {
-  const goBack = (e) => {
-    e.preventDefault();
-    window.location.hash = ''; // Clear hash to return
-  };
-
   return (
     <div className="fade-in">
       <div style={{ marginBottom: '2rem' }}>
-        <a href="#" onClick={goBack} className="all-writing-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
+        <a href="#projects" className="all-writing-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
           <i className="fa-solid fa-arrow-left icon-sm"></i> Back to library
         </a>
       </div>

@@ -38,10 +38,12 @@ export default function App() {
           return;
         }
       }
-      // If we are on internal detail but the hash cleared, bounce back to projects
-      if (activeTab === 'project-detail' && (!hash || hash === '' || hash === '#')) {
-        setActiveTab('projects');
       }
+
+      if (hash === '#projects') setActiveTab('projects');
+      else if (hash === '#work') setActiveTab('work');
+      else if (hash === '#writing') setActiveTab('writing');
+      else if (hash === '#about' || !hash || hash === '' || hash === '#') setActiveTab('about');
     };
 
     window.addEventListener('hashchange', handleHash);
@@ -60,30 +62,38 @@ export default function App() {
         <div className="nav-container">
           <div className="nav-brand">AG</div>
           <div className="tabs-navigation">
-            <button 
+            <a 
               className={`tab-btn ${activeTab === 'about' ? 'active' : ''}`}
-              onClick={() => { setActiveTab('about'); window.location.hash = ''; }}
+              href="#about"
             >
               <i className="fa-solid fa-house icon-sm"></i> Home
-            </button>
-            <button 
+            </a>
+            <a 
               className={`tab-btn ${activeTab === 'projects' ? 'active' : ''}`}
-              onClick={() => { setActiveTab('projects'); window.location.hash = ''; }}
+              href="#projects"
             >
               <i className="fa-solid fa-hammer icon-sm"></i> Projects
-            </button>
-            <button 
+            </a>
+            <a 
               className={`tab-btn ${activeTab === 'work' ? 'active' : ''}`}
-              onClick={() => { setActiveTab('work'); window.location.hash = ''; }}
+              href="#work"
             >
               <i className="fa-solid fa-briefcase icon-sm"></i> Work
-            </button>
-            <button 
+            </a>
+            <a 
               className={`tab-btn ${activeTab === 'writing' ? 'active' : ''}`}
-              onClick={() => { setActiveTab('writing'); window.location.hash = ''; }}
+              href="#writing"
             >
               <i className="fa-solid fa-feather icon-sm"></i> Writing
-            </button>
+            </a>
+            <a 
+              className="tab-btn"
+              href="https://wanderingbong.com/galleries"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-solid fa-camera icon-sm"></i> Photography
+            </a>
           </div>
         </div>
       </nav>
