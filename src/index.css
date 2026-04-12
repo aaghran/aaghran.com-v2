@@ -538,6 +538,31 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  /* Mobile Flex Overflow Nav Fix */
+  .nav-container {
+    padding: 0 0.5rem;
+  }
+  .nav-brand {
+    display: none;
+  }
+  .tabs-navigation {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  }
+  .tabs-navigation::-webkit-scrollbar {
+    display: none;
+  }
+  .tab-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.5rem;
+  }
 }
 
 /* Global Top Navigation */
