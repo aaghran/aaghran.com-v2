@@ -28,6 +28,15 @@ export default function App() {
     // Setup hashchange routing listener for robust internal navigations
     const handleHash = () => {
       const hash = window.location.hash;
+      
+      // Explicitly trigger GA4 page_view for SPA routing
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'page_view', {
+          page_path: window.location.pathname + hash,
+          page_title: document.title
+        });
+      }
+
       if (hash.startsWith('#project/')) {
         const id = hash.replace('#project/', '');
         const proj = projects.find(p => p.id === id);
@@ -37,7 +46,6 @@ export default function App() {
           setActiveTab('project-detail');
           return;
         }
-      }
       }
 
       if (hash === '#projects') setActiveTab('projects');
