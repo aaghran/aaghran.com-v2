@@ -46,19 +46,16 @@ export default function AboutMe({ setActiveTab }) {
         <h2><i className="fa-solid fa-hammer text-accent icon-md"></i> Featured Projects</h2>
         <div className="projects-grid" style={{marginTop: '1.5rem'}}>
           {projects.slice(0, 2).map((p, i) => {
-            const inner = (
-              <>
+            return (
+              <a href={`#project/${p.id}`} className={`project-card ${p.isComingSoon ? 'coming-soon' : ''}`} key={i}>
                 <div className="card-header">
                   <h3>{p.title} {p.isComingSoon ? <span className="badge">Coming Soon</span> : p.url ? <i className="fa-solid fa-arrow-up-right-from-square icon-xs"></i> : null}</h3>
                   <span className={`tag ${p.isComingSoon ? 'in-progress' : ''}`}>{p.tag}</span>
                 </div>
                 <p className="card-desc">{p.description}</p>
                 {p.isComingSoon && <span className="cta-link">Join waitlist <i className="fa-solid fa-arrow-right icon-sm"></i></span>}
-              </>
+              </a>
             );
-            return p.url
-              ? <a href={p.url} className={`project-card ${p.isComingSoon ? 'coming-soon' : ''}`} key={i} target="_blank" rel="noreferrer">{inner}</a>
-              : <div className="project-card" key={i}>{inner}</div>;
           })}
         </div>
         <div style={{marginTop: '1.5rem'}}>
