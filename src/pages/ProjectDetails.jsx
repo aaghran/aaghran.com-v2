@@ -11,8 +11,12 @@ export default function ProjectDetails({ project }) {
 
       {/* Header */}
       <header className="section reveal">
-        <span className="tag" style={{ display: 'inline-block', marginBottom: '1rem' }}>{project.tag}</span>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--text-main)', lineHeight: 1.15 }}>{project.title}</h1>
+        <div style={{ display: 'block', marginBottom: '0.75rem' }}>
+          <span className="tag" style={{ display: 'inline-block' }}>{project.tag}</span>
+        </div>
+        <div style={{ display: 'block', marginBottom: '1rem' }}>
+          <h1 style={{ fontSize: '2.5rem', margin: 0, color: 'var(--text-main)', lineHeight: 1.15 }}>{project.title}</h1>
+        </div>
         {project.lede && (
           <p className="subtitle" style={{ fontSize: '1.15rem', color: 'var(--text-lighter)', maxWidth: '640px', lineHeight: 1.6 }}>
             {project.lede}
