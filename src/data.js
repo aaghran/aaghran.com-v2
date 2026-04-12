@@ -22,31 +22,43 @@ export const projects = [
   },
   {
     title: "Eidetic",
+    id: "eidetic",
     url: null,
     tag: "Knowledge Graph • MCP",
     description: "I kept losing things I'd read. Built a Chrome extension + mobile app to capture anything, a FastAPI + pgvector backend to search it, and an MCP server so Claude can query my memory mid-conversation.",
-    isComingSoon: false
+    isComingSoon: false,
+    content: "Eidetic is my fully-featured personal knowledge graph. I built it so that every article I read, note I write, or idea I think gets vectorized and stored logically rather than hierarchically.",
+    screenshots: []
   },
   {
     title: "Worldview",
+    id: "worldview",
     url: null,
     tag: "Data Viz • 3D Globe",
     description: "Started as a question: can you show where every tracked satellite actually is, right now? CelesTrak orbital data, satellite.js propagation, Mapbox GL v3 globe. You can scrub through time.",
-    isComingSoon: false
+    isComingSoon: false,
+    content: "An interactive Mapbox GL v3 and Three.js implementation that calculates and projects live TLE (Two-Line Element) orbital data to accurately map the path of satellites over a 3D Earth.",
+    screenshots: []
   },
   {
     title: "Pather",
+    id: "pather",
     url: null,
     tag: "Privacy • Local-first",
     description: "Frustrated with Google Maps Timeline — too much of my life living in someone else's infra. Built my own GPS logger. Classifies movement, detects stops, builds a day timeline. All on-device.",
-    isComingSoon: false
+    isComingSoon: false,
+    content: "WatermelonDB powers this pure local-first architecture. It runs in the background constantly capturing precise geospatial coordinates, storing them fully offline on the device without pinging a central server.",
+    screenshots: []
   },
   {
     title: "BIRD → Snowflake",
-    url: "https://github.com/aaghran/bird-snowflake-loader",
+    id: "bird-loader",
+    url: null,
     tag: "NLS • Benchmarking",
     description: "Nobody had built a Snowflake loader for the BIRD NL-to-SQL benchmark. I needed one for evaluating Spotter, so I built it and open-sourced it. 500 questions, 22 databases, 158+ tables.",
-    isComingSoon: false
+    isComingSoon: false,
+    content: "To properly evaluate Spotter's NLS capabilities, we had to pipe BIRD benchmark datasets into Snowflake. This open-source data engineering pipeline handles those massive parallel inserts.",
+    screenshots: []
   }
 ];
 

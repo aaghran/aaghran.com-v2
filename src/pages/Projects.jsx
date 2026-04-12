@@ -29,9 +29,17 @@ export default function Projects() {
               {p.isComingSoon && <span className="cta-link">Join waitlist <i className="fa-solid fa-arrow-right icon-sm"></i></span>}
             </>
           );
-          return p.url
-            ? <a href={p.url} className={`project-card ${p.isComingSoon ? 'coming-soon' : ''}`} key={i} target="_blank" rel="noreferrer">{inner}</a>
-            : <div className="project-card" key={i}>{inner}</div>;
+          return (
+            <a 
+              href={p.url || `#project/${p.id}`} 
+              className={`project-card ${p.isComingSoon ? 'coming-soon' : ''}`} 
+              key={i} 
+              target={p.url ? "_blank" : undefined} 
+              rel={p.url ? "noreferrer" : undefined}
+            >
+              {inner}
+            </a>
+          );
         })}
       </div>
     </div>
