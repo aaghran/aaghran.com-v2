@@ -83,31 +83,31 @@ export const writings = [
   },
   {
     title: "Going back 900 years at Hoysaleswara Temple Halebidu",
-    url: "https://medium.com/@aaghran",
+    url: "https://aaghran.medium.com/going-back-900-years-at-hoysaleswara-temple-halebidu-trips-from-bangalore-wandering-bong-c7ca35f3c6ae",
     meta: "Medium • Travel",
     image: "assets/halebidu_temple.png"
   },
   {
     title: "Floating through the Mangroves of Sundarbans",
-    url: "https://medium.com/@aaghran",
+    url: "https://medium.com/wandering-bong-travel-blog/floating-through-the-mangroves-of-sundarbans-a-day-trip-from-kolkata-sundarban-national-park-9110f9a0dae3",
     meta: "Medium • Travel",
     image: "assets/sundarbans_mangrove.png"
   },
   {
     title: "Coffee Culture in Vietnam: Strong and Slow drip",
-    url: "https://medium.com/@aaghran",
+    url: "https://medium.com/wandering-bong-travel-blog/coffee-culture-in-vietnam-strong-and-slow-drip-wandering-bong-cd5435cf1a98",
     meta: "Medium • Travel",
     image: "assets/vietnam_coffee.png"
   },
   {
     title: "Impressive Forts in and around Bangalore",
-    url: "https://medium.com/@aaghran",
+    url: "https://medium.com/wandering-bong-travel-blog/impressive-forts-in-and-around-bangalore-day-trips-from-bangalore-wandering-bong-9249a93ffb34",
     meta: "Medium • Travel",
     image: "assets/bangalore_fort.png"
   },
   {
     title: "Why we Went Back to Thailand",
-    url: "https://medium.com/@aaghran",
+    url: "https://aaghran.medium.com/why-we-went-back-to-thailand-wandering-bong-ef1f8a0b105a",
     meta: "Medium • Travel",
     image: "assets/thailand_beach.png"
   }
