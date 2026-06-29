@@ -11,25 +11,66 @@ const featuredWriting = writing.slice(0, 3);
 <Layout title="Aaghran Ghosh — AI Builder · AI PM" description="MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.">
 
   <!-- Hero -->
-  <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 border-b border-line relative overflow-hidden">
-    <div class="pointer-events-none select-none absolute right-8 top-8 text-[120px] font-black leading-none opacity-[0.04] text-ink">AI</div>
-    <p class="text-[10px] text-accent font-bold tracking-[0.2em] uppercase mb-5">
-      AI Builder · AI PM · Bangalore
-    </p>
-    <h1 class="text-5xl font-black text-ink tracking-tightest leading-[1.02] mb-6 max-w-xl">
-      I scope and<br/>build the AI layer.
-    </h1>
-    <p class="text-sm text-ink-muted leading-relaxed max-w-[420px] mb-8">
-      MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.
-      Principal PM at ThoughtSpot by day. Building on my own terms the rest of the time.
-    </p>
-    <div class="flex items-center gap-4 flex-wrap">
-      <a href="#work" class="text-xs bg-ink text-canvas px-4 py-2 rounded-lg hover:opacity-80 transition-opacity">
-        See what I've built ↓
-      </a>
-      <span class="text-xs text-ink-muted">
-        or email <a href="mailto:aaghran@gmail.com" class="text-accent font-semibold hover:underline">aaghran@gmail.com</a>
-      </span>
+  <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 border-b border-line">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left: copy -->
+      <div>
+        <p class="text-[10px] text-accent font-bold tracking-[0.2em] uppercase mb-5">
+          AI Builder · AI PM · Bangalore
+        </p>
+        <h1 class="text-5xl font-black text-ink tracking-tightest leading-[1.02] mb-6">
+          I scope and<br/>build the AI layer.
+        </h1>
+        <p class="text-sm text-ink-muted leading-relaxed mb-8">
+          MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.
+          Principal PM at ThoughtSpot by day. Building on my own terms the rest of the time.
+        </p>
+        <div class="flex items-center gap-4 flex-wrap">
+          <a href="#work" class="text-xs bg-ink text-canvas px-4 py-2 rounded-lg hover:opacity-80 transition-opacity">
+            See what I've built ↓
+          </a>
+          <span class="text-xs text-ink-muted">
+            or email <a href="mailto:aaghran@gmail.com" class="text-accent font-semibold hover:underline">aaghran@gmail.com</a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: agentic loop diagram -->
+      <div class="hidden md:flex items-center justify-center">
+        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[260px]" aria-hidden="true">
+          <!-- outer dashed ring -->
+          <circle cx="110" cy="110" r="90" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="5,5"/>
+
+          <!-- rotating arc (accent) -->
+          <circle cx="110" cy="110" r="90" fill="none" stroke="var(--color-accent-border)" stroke-width="2"
+            stroke-dasharray="80,490" stroke-linecap="round" transform="rotate(-90 110 110)">
+            <animateTransform attributeName="transform" type="rotate" from="-90 110 110" to="270 110 110" dur="8s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- step boxes on the ring: top, right, bottom, left -->
+          <!-- Observe (top) -->
+          <rect x="75" y="8" width="70" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
+          <text x="110" y="23" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Observe</text>
+
+          <!-- Reason (right) -->
+          <rect x="160" y="99" width="54" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
+          <text x="187" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Reason</text>
+
+          <!-- Act (bottom) -->
+          <rect x="75" y="190" width="70" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
+          <text x="110" y="205" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Act</text>
+
+          <!-- Evaluate (left) -->
+          <rect x="6" y="99" width="58" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
+          <text x="35" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Evaluate</text>
+
+          <!-- center: Claude node -->
+          <circle cx="110" cy="110" r="36" fill="var(--color-accent-bg)" stroke="var(--color-accent-border)" stroke-width="1.5"/>
+          <text x="110" y="104" text-anchor="middle" font-size="18" fill="var(--color-accent)" font-family="Inter,sans-serif">◈</text>
+          <text x="110" y="118" text-anchor="middle" font-size="8.5" font-weight="700" fill="var(--color-accent)" font-family="Inter,sans-serif" letter-spacing="1">AGENT</text>
+          <text x="110" y="130" text-anchor="middle" font-size="7" fill="var(--color-accent)" font-family="Inter,sans-serif" opacity="0.7">Claude API</text>
+        </svg>
+      </div>
     </div>
   </section>
 
