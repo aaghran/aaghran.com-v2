@@ -1,0 +1,10 @@
+{
+  "title": "BIRD → Snowflake",
+  "tag": "NLS · Benchmarking",
+  "description": "Nobody had built a Snowflake loader for the BIRD NL-to-SQL benchmark. I needed one for evaluating Spotter, so I built it and open-sourced it. 500 questions, 22 databases, 158+ tables.",
+  "lede": "Nobody had built this. I needed it. So I built it and open-sourced it.",
+  "story": "BIRD is the standard NL-to-SQL benchmark. If you're building or evaluating a system that lets users query databases in plain English, BIRD is what you benchmark against — 500 questions, 22 databases, realistic enterprise complexity. Every serious paper uses it.\n\nThe problem is it ships with SQLite. If you're evaluating against Snowflake — which is where most enterprise analytics actually runs — you have to get the data there yourself. I looked for a loader. Nothing existed.\n\nSo I built one. The pipeline reads BIRD's SQLite schemas and data dumps, maps them to Snowflake types (more divergence than you'd expect — SQLite stores booleans as integers, dates as text, and has fairly loose type enforcement across rows), creates the databases and schemas, and runs parallel inserts with chunking for the larger tables.\n\nFull load runs in under ten minutes. I open-sourced it because the gap was obviously going to bite other people too, and it did — a few teams picked it up for their own evaluations fairly quickly. That's probably the cleanest signal a utility tool can get: someone else had the same problem and your solution was close enough to just work for them.",
+  "stack": ["Python", "Snowflake Connector", "pandas", "SQLite", "multiprocessing"],
+  "url": "https://github.com/aaghran/bird-snowflake-loader",
+  "showPipelineDiagram": false
+}

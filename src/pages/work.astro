@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { workExperience } from '../data/work';
+---
+<Layout title="Work — Aaghran Ghosh">
+  <div class="max-w-2xl mx-auto px-6 py-16">
+    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-3">Experience</p>
+    <h1 class="text-4xl font-black text-ink tracking-tightest mb-3">Work</h1>
+    <p class="text-sm text-ink-muted mb-12 max-w-lg">
+      Nine years across PM and engineering roles. Currently building AI at enterprise scale.
+    </p>
+    <div class="space-y-4">
+      {workExperience.map(job => (
+        <WorkCard
+          company={job.company}
+          role={job.role}
+          duration={job.duration}
+          location={job.location}
+          bullets={job.bullets}
+          expanded={true}
+        />
+      ))}
+    </div>
+  </div>
+</Layout>

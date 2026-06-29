@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+---
+<Layout title="Projects — Aaghran Ghosh">
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-3">Building</p>
+    <h1 class="text-4xl font-black text-ink tracking-tightest mb-3">Projects</h1>
+    <p class="text-sm text-ink-muted mb-12 max-w-lg">
+      Production systems, tools I built for myself, and experiments worth sharing.
+      WanderingBong is the primary live system. The rest are proofs of work.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-4">
+      {projects.map(p => (
+        <ProjectCard
+          title={p.data.title}
+          tag={p.data.tag}
+          description={p.data.description}
+          url={p.data.url}
+          href={`/projects/${p.id}`}
+        />
+      ))}
+    </div>
+  </div>
+</Layout>

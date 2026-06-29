@@ -1,0 +1,10 @@
+{
+  "title": "Worldview",
+  "tag": "Data Viz · 3D Globe",
+  "description": "Started as a question: can you show where every tracked satellite actually is, right now? CelesTrak orbital data, satellite.js propagation, Mapbox GL v3 globe. You can scrub through time.",
+  "lede": "Started with a simple question: where is every tracked satellite right now?",
+  "story": "CelesTrak publishes TLE data — Two-Line Element sets — for every tracked object in orbit. GPS satellites, the ISS, weather birds, Starlink, debris, all of it. The data is public. The math to turn those two lines into a real-world position exists. I wanted to see all of it on a globe at once.\n\nI assumed someone had already built this well. I was wrong. There are some academic tools, some outdated Java applets, nothing that felt like it took the visualisation seriously. So I built it.\n\nsatellite.js handles the orbital mechanics — it implements SGP4, the same propagation algorithm used by the US Space Surveillance Network. You give it a TLE and a timestamp and it tells you exactly where that object is. Mapbox GL v3 renders the 3D globe.\n\nThe moment that made it worth it: the first time I loaded the MEO belt — GPS and navigation satellites sitting at around 20,000 kilometres — and watched them populate into their slots around the globe. They're spread almost perfectly evenly. You can see why the GPS constellation is shaped the way it is. It stops being abstract.\n\nThe time scrubber is what I'm most happy with. You can pick any time — past or future — and watch the orbits run.\n\nThe wall I keep hitting is performance. Five thousand satellites with trail calculations at 60fps is a lot. That's probably the next version.",
+  "stack": ["Mapbox GL v3", "satellite.js", "Three.js", "CelesTrak", "Vite", "JavaScript"],
+  "url": null,
+  "showPipelineDiagram": false
+}

@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PipelineDiagram from '../components/PipelineDiagram.astro';
+import EngagementsBlock from '../components/EngagementsBlock.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const writing = await getCollection('writing');
+const featuredWriting = writing.slice(0, 3);
+---
+<Layout title="Aaghran Ghosh — AI Builder · AI PM" description="MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.">
+
+  <!-- Hero -->
+  <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 border-b border-line relative overflow-hidden">
+    <div class="pointer-events-none select-none absolute right-8 top-8 text-[120px] font-black leading-none opacity-[0.04] text-ink">AI</div>
+    <p class="text-[10px] text-accent font-bold tracking-[0.2em] uppercase mb-5">
+      AI Builder · AI PM · Bangalore
+    </p>
+    <h1 class="text-5xl font-black text-ink tracking-tightest leading-[1.02] mb-6 max-w-xl">
+      I scope and<br/>build the AI layer.
+    </h1>
+    <p class="text-sm text-ink-muted leading-relaxed max-w-[420px] mb-8">
+      MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.
+      Principal PM at ThoughtSpot by day. Building on my own terms the rest of the time.
+    </p>
+    <div class="flex items-center gap-4 flex-wrap">
+      <a href="#work" class="text-xs bg-ink text-canvas px-4 py-2 rounded-lg hover:opacity-80 transition-opacity">
+        See what I've built ↓
+      </a>
+      <span class="text-xs text-ink-muted">
+        or email <a href="mailto:aaghran@gmail.com" class="text-accent font-semibold hover:underline">aaghran@gmail.com</a>
+      </span>
+    </div>
+  </section>
+
+  <!-- Currently strip -->
+  <div class="bg-accent-subtle border-b border-accent-ring">
+    <div class="max-w-4xl mx-auto px-6 py-3 flex items-center gap-4 flex-wrap">
+      <span class="text-[10px] text-accent font-bold tracking-[0.15em] uppercase shrink-0">Currently</span>
+      <div class="w-px h-4 bg-accent-ring shrink-0"></div>
+      <p class="text-xs text-ink">
+        Principal PM @ <strong>ThoughtSpot</strong> — building Spotter, an AI analytics agent used by enterprises
+      </p>
+      <span class="ml-auto text-[10px] bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2.5 py-1 rounded-full font-semibold whitespace-nowrap">
+        ● Active
+      </span>
+    </div>
+  </div>
+
+  <!-- Selected Work -->
+  <section id="work" class="max-w-4xl mx-auto px-6 py-16">
+    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-10">Selected Work</p>
+
+    <!-- 01 WanderingBong -->
+    <div class="grid md:grid-cols-2 gap-8 pb-12 border-b border-line mb-12 items-start">
+      <div>
+        <p class="text-[10px] text-ink-muted mb-3 tracking-wide">01 — AI Pipeline · Production</p>
+        <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">WanderingBong</h2>
+        <p class="text-sm text-ink-muted leading-relaxed mb-5">
+          A slow travel blog rebuilt around a custom AI pipeline.
+          Telegram capture → MCP server → Claude API agent → Supabase CMS → published post.
+          Trip notes in. Posts out.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-5">
+          {['MCP', 'Claude API', 'Node.js', 'Supabase'].map(t => (
+            <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
+          ))}
+        </div>
+        <a href="/projects/wanderingbong" class="text-sm text-accent font-bold hover:underline">
+          Read the full story →
+        </a>
+      </div>
+      <div class="bg-surface border border-line rounded-xl p-5">
+        <p class="text-[9px] text-ink-muted tracking-[0.15em] uppercase mb-3">Publishing pipeline</p>
+        <PipelineDiagram />
+      </div>
+    </div>
+
+    <!-- 02 Spotter -->
+    <div class="flex items-start justify-between gap-6 flex-wrap pb-12 border-b border-line mb-8">
+      <div class="flex-1 min-w-0">
+        <p class="text-[10px] text-ink-muted mb-3 tracking-wide">02 — Enterprise AI · Principal PM</p>
+        <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Spotter @ ThoughtSpot</h2>
+        <p class="text-sm text-ink-muted leading-relaxed max-w-lg">
+          AI analytics agent that moves enterprise users from "what happened" to "why it happened."
+          I own the reasoning loop, MCP integration layer, and the UI model for multi-step agentic workflows.
+        </p>
+      </div>
+      <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
+        ● Live · Enterprise
+      </span>
+    </div>
+
+    <!-- More projects link -->
+    <a href="/projects" class="text-sm text-accent font-bold hover:underline">
+      View all projects — Eidetic, Lyaadh, Worldview, BIRD→Snowflake →
+    </a>
+  </section>
+
+  <!-- Engagements -->
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <EngagementsBlock />
+  </section>
+
+  <!-- Writing preview -->
+  <section class="max-w-4xl mx-auto px-6 pb-20 border-t border-line pt-16">
+    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-8">Writing</p>
+    <div class="grid sm:grid-cols-3 gap-4 mb-6">
+      {featuredWriting.map(w => (
+        <ArticleCard
+          title={w.data.title}
+          meta={w.data.meta}
+          url={w.data.url}
+          image={w.data.image}
+        />
+      ))}
+    </div>
+    <a href="https://aaghran.substack.com" target="_blank" rel="noreferrer"
+      class="text-sm text-accent font-bold hover:underline">
+      All writing on Substack →
+    </a>
+  </section>
+
+</Layout>

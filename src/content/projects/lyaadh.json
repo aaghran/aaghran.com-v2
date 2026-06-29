@@ -1,0 +1,10 @@
+{
+  "title": "Lyaadh",
+  "tag": "Brand · Live",
+  "description": "Bengali for the art of pleasurable lethargy. A brand — not an app. ShortCuts (a Task Shrinker with a Coma Mode), Dokan (curated gear for doing nothing), Escapes. Tagline: The Art of Productive Laziness.",
+  "lede": "Bengali for the art of pleasurable lethargy. I wanted to build something slower.",
+  "story": "Lyaadh is a Bengali word with no clean English translation. It's the feeling of lying around on a Sunday afternoon not because you're tired, but because you've consciously decided the world can wait. My family uses it. It carries something that \"rest\" or \"laziness\" doesn't — it's not an apology for doing nothing, it's a chosen state.\n\nI couldn't find a brand for this. Everything in the productivity and wellness space either hustles you or makes you feel guilty for not hustling. I wanted something that took the slower pace seriously — not as recovery, just as a way of being.\n\nThe brand has four pillars. The Dokan is a curated shop — things worth owning because they make slowness better, not more efficient. ShortCuts is the tool: a task shrinker that finds the minimum viable version of whatever you're trying to do, including a Coma Mode for when even that is too much. Escapes is slow travel. And The Letter is a weekly newsletter written by my wife — short essays, no lists, no tips, just a voice that gives you permission to exhale.\n\nThe partnership is the best part of it. She writes, I build. Her editorial instinct and my product instinct are genuinely different, and the brand is better for it.",
+  "stack": ["Next.js", "Supabase", "Tailwind", "Ollama", "Vercel"],
+  "url": "https://lyaadh.com",
+  "showPipelineDiagram": false
+}
