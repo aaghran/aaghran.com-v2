@@ -1,8 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import WorkCard from '../components/WorkCard.astro';
+import PipelineDiagram from '../components/PipelineDiagram.astro';
+import EngagementsBlock from '../components/EngagementsBlock.astro';
 ---
 <Layout>
-  <div class="max-w-4xl mx-auto px-6 py-20">
-    <h1 class="text-4xl font-black">Hello Astro</h1>
+  <div class="max-w-4xl mx-auto px-6 py-12 space-y-8">
+    <ProjectCard title="Test Project" tag="Tag" description="Desc" url="https://example.com" href="/projects/test" />
+    <ArticleCard title="Test Article" meta="Substack · Jan 2026" url="https://example.com" image={null} />
+    <WorkCard company="ThoughtSpot" role="Principal PM" duration="2024–Present" location="Bengaluru" bullets={["Built Spotter"]} />
+    <PipelineDiagram />
+    <EngagementsBlock />
   </div>
 </Layout>

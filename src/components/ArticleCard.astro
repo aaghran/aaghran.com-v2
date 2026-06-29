@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  meta: string;
+  url: string;
+  image: string | null;
+}
+const { title, meta, url, image } = Astro.props;
+---
+<a href={url} target="_blank" rel="noreferrer"
+  class="block bg-surface border border-line rounded-xl overflow-hidden hover:border-accent-ring transition-colors group no-underline">
+  {image && (
+    <div class="h-32 bg-cover bg-center bg-no-repeat"
+      style={`background-image: url(${image})`}></div>
+  )}
+  <div class="p-4">
+    <p class="text-[10px] text-ink-muted mb-2">{meta}</p>
+    <h3 class="text-xs font-bold text-ink leading-snug mb-3 group-hover:text-accent transition-colors line-clamp-3">
+      {title}
+    </h3>
+    <span class="text-[10px] text-accent font-semibold">Read →</span>
+  </div>
+</a>

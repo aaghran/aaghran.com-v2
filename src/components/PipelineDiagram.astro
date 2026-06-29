@@ -1,0 +1,62 @@
+---
+const nodes = [
+  { label: 'Trip Notes', sub: 'Telegram Bot', icon: '✈' },
+  { label: 'cms-mcp',    sub: 'MCP Server',   icon: '⚙' },
+  { label: 'Claude API', sub: 'ADK Agent',    icon: '◈', highlight: true },
+  { label: 'CMS',        sub: 'Supabase',     icon: '⬡' },
+  { label: 'Post',       sub: 'Published',    icon: '✦' },
+];
+---
+<div class="w-full overflow-x-auto py-2">
+  <svg viewBox="0 0 660 120" xmlns="http://www.w3.org/2000/svg"
+    class="w-full max-w-[660px]" aria-label="WanderingBong publishing pipeline">
+
+    {nodes.map((n, i) => {
+      const x = 10 + i * 130;
+      const cx = x + 50;
+      return (
+        <>
+          {/* Connector line */}
+          {i < nodes.length - 1 && (
+            <line
+              x1={x + 100} y1="60"
+              x2={x + 130} y2="60"
+              stroke="var(--color-accent-border)"
+              stroke-width="1.5"
+              stroke-dasharray="4 3"
+            />
+          )}
+          {/* Arrow */}
+          {i < nodes.length - 1 && (
+            <polygon
+              points={`${x+128},56 ${x+135},60 ${x+128},64`}
+              style="fill: var(--color-accent-border)"
+            />
+          )}
+          {/* Card background */}
+          <rect
+            x={x} y="28" width="100" height="64" rx="8"
+            style={n.highlight
+              ? 'fill: #fef9c3; stroke: #fcd34d; stroke-width: 1.5'
+              : 'fill: var(--color-bg-card); stroke: var(--color-border); stroke-width: 1'}
+          />
+          {/* Icon */}
+          <text x={cx} y="52" text-anchor="middle"
+            style="fill: var(--color-accent); font-size: 14px;">
+            {n.icon}
+          </text>
+          {/* Label */}
+          <text x={cx} y="68" text-anchor="middle"
+            style="fill: var(--color-text); font-size: 9px; font-weight: 700; font-family: Inter, sans-serif;">
+            {n.label}
+          </text>
+          {/* Sub */}
+          <text x={cx} y="82" text-anchor="middle"
+            style="fill: var(--color-text-muted); font-size: 7.5px; font-family: Inter, sans-serif;">
+            {n.sub}
+          </text>
+        </>
+      );
+    })}
+  </svg>
+</div>
