@@ -1,9 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-const projects = await getCollection('projects');
-const writing = await getCollection('writing');
+import Layout from '../layouts/Layout.astro';
 ---
-<html><body>
-  <p>Projects: {projects.length}</p>
-  <p>Writing: {writing.length}</p>
-</body></html>
+<Layout>
+  <div class="max-w-4xl mx-auto px-6 py-20">
+    <h1 class="text-4xl font-black">Hello Astro</h1>
+  </div>
+</Layout>
