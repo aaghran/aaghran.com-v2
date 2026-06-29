@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const writing = await getCollection('writing');
+const technical = writing.filter(w => w.data.meta.includes('Substack'));
+const travel    = writing.filter(w => w.data.meta.includes('Medium'));
+---
+<Layout title="Writing — Aaghran Ghosh">
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-3">Writing</p>
+    <h1 class="text-4xl font-black text-ink tracking-tightest mb-3">Articles</h1>
+    <p class="text-sm text-ink-muted mb-12 max-w-lg">
+      Thoughts on AI agents, MCP, and product building — plus slow travel stories from places I've actually been.
+    </p>
+
+    <!-- Technical writing -->
+    <div class="mb-12">
+      <p class="text-[10px] text-ink-muted tracking-[0.2em] uppercase mb-5">AI & Product</p>
+      <div class="grid sm:grid-cols-3 gap-4 mb-5">
+        {technical.map(w => (
+          <ArticleCard title={w.data.title} meta={w.data.meta} url={w.data.url} image={w.data.image} />
+        ))}
+      </div>
+      <a href="https://aaghran.substack.com" target="_blank" rel="noreferrer"
+        class="text-sm text-accent font-bold hover:underline">
+        Subscribe on Substack →
+      </a>
+    </div>
+
+    <!-- Travel writing -->
+    <div>
+      <p class="text-[10px] text-ink-muted tracking-[0.2em] uppercase mb-5">Travel</p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        {travel.map(w => (
+          <ArticleCard title={w.data.title} meta={w.data.meta} url={w.data.url} image={w.data.image} />
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
