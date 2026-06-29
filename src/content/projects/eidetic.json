@@ -1,0 +1,10 @@
+{
+  "title": "Eidetic",
+  "tag": "Knowledge Graph · MCP",
+  "description": "I kept losing things I'd read. Built a Chrome extension + mobile app to capture anything, a FastAPI + pgvector backend to search it, and an MCP server so Claude can query my memory mid-conversation.",
+  "lede": "I kept losing things I'd read. Not forgetting — losing. So I built my own memory system.",
+  "story": "The problem isn't forgetting. It's that the things I read live in twelve different places — some in Notion, some in Pocket, some in a browser tab I never closed, some just genuinely gone. When I want to find something, I know I read it, I can picture roughly when, but I can't locate it. Keyword search doesn't help because I don't remember the exact words.\n\nI wanted a system I could ask a question and get back the thing I was actually thinking of — not a list of keyword matches.\n\nThe architecture is: a Chrome extension that captures anything from the browser with one click, a React Native mobile app for on-the-go capture, a FastAPI backend that embeds everything with OpenAI's embedding model and stores it in pgvector, and an MCP server that exposes a search tool to Claude.\n\nThe MCP part is what I didn't expect to matter as much as it does. The first time I was in a Claude conversation — talking about something completely unrelated — and it pulled a note I'd saved six months earlier without me asking, I had to stop and read it again. It found a connection I'd forgotten I'd made. That's the version of memory I was trying to build.\n\nThe honest problem is capture habituation. The system only works if you consistently put things into it, and that habit is harder to build than the software was to write. Which is a product problem more than a technical one, and I haven't solved it.",
+  "stack": ["Python", "FastAPI", "pgvector", "PostgreSQL", "React Native", "Expo", "MCP", "Chrome Extension (MV3)"],
+  "url": null,
+  "showPipelineDiagram": false
+}

@@ -1,6 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
+const projects = await getCollection('projects');
+const writing = await getCollection('writing');
 ---
-<html lang="en">
-  <head><meta charset="UTF-8" /><title>Aaghran Ghosh</title></head>
-  <body><h1>Coming soon</h1></body>
-</html>
+<html><body>
+  <p>Projects: {projects.length}</p>
+  <p>Writing: {writing.length}</p>
+</body></html>
