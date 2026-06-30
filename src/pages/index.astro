@@ -41,11 +41,9 @@ const featuredWriting = writing.slice(0, 3);
           <!-- outer dashed ring -->
           <circle cx="110" cy="110" r="90" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="5,5"/>
 
-          <!-- rotating arc (accent) -->
+          <!-- accent arc (static) -->
           <circle cx="110" cy="110" r="90" fill="none" stroke="var(--color-accent-border)" stroke-width="2"
-            stroke-dasharray="80,490" stroke-linecap="round" transform="rotate(-90 110 110)">
-            <animateTransform attributeName="transform" type="rotate" from="-90 110 110" to="270 110 110" dur="8s" repeatCount="indefinite"/>
-          </circle>
+            stroke-dasharray="80,490" stroke-linecap="round" transform="rotate(-90 110 110)"/>
 
           <!-- step boxes on the ring: top, right, bottom, left -->
           <!-- Observe (top) -->
