@@ -10,7 +10,12 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { title, tag, lede, story, stack, url, showPipelineDiagram } = project.data;
-const paragraphs = story.split('\n\n').filter(Boolean);
+
+type Block = { type: 'h2' | 'p'; text: string };
+const blocks: Block[] = story.split('\n\n').filter(Boolean).map((chunk: string) => {
+  if (chunk.startsWith('## ')) return { type: 'h2', text: chunk.slice(3) };
+  return { type: 'p', text: chunk };
+});
 ---
 <Layout title={`${title} — Aaghran Ghosh`} description={lede}>
   <div class="max-w-2xl mx-auto px-6 py-16">
@@ -49,9 +54,11 @@ const paragraphs = story.split('\n\n').filter(Boolean);
 
     <!-- Story -->
     <div class="space-y-5 mb-12">
-      {paragraphs.map(p => (
-        <p class="text-sm text-ink leading-[1.85]">{p}</p>
-      ))}
+      {blocks.map(block =>
+        block.type === 'h2'
+          ? <h2 class="text-lg font-black text-ink tracking-tightest mt-10 mb-1">{block.text}</h2>
+          : <p class="text-sm text-ink leading-[1.85]">{block.text}</p>
+      )}
     </div>
 
     <!-- Stack -->
