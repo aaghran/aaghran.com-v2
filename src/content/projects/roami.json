@@ -1,0 +1,10 @@
+{
+  "title": "Roami",
+  "tag": "Travel App · React Native · Production",
+  "description": "A travel journaling app I designed and shipped end-to-end — full IA, user flows, schema, and production deployment. Self-tested on a multi-island trip in Thailand before deciding what to build next.",
+  "lede": "A travel journaling app built to replace the Notes-app chaos of actual travel.",
+  "story": "Every trip I've taken has the same problem: I capture things in fragments — voice memos, photos, notes app entries at odd hours — and by the time I'm home, the context that made them meaningful has dissolved. I wanted something designed specifically for the way travel actually happens: out of order, in motion, across time zones, with bad wifi.\n\nRoami is a React Native/Expo app with a Supabase backend. The design premise was editorial and calm — dark backgrounds, warm amber accents, deliberate typography — because I wanted it to feel like a journal, not a productivity tool. I handled the full information architecture and user flows myself before writing a line of code.\n\nThe schema was the interesting design problem. Trips aren't linear. You might revisit a place, split across days, have nested locations. I modeled the data structure before the UI, which made the UI significantly easier to build.\n\nI took Roami to Thailand specifically to test it in real conditions — multi-island, ten days, real trips, real friction. The app works. The hard part is habit formation, which is a product problem I'm still thinking through.\n\nroami.xyz is the marketing site. app.roami.xyz is the dashboard.",
+  "stack": ["React Native", "Expo", "Supabase", "TypeScript", "React Navigation"],
+  "url": "https://roami.xyz",
+  "showPipelineDiagram": false
+}

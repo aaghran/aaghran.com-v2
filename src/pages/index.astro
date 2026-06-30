@@ -8,22 +8,24 @@ import { getCollection } from 'astro:content';
 const writing = await getCollection('writing');
 const featuredWriting = writing.slice(0, 3);
 ---
-<Layout title="Aaghran Ghosh — AI Builder · AI PM" description="MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.">
+<Layout title="Aaghran Ghosh — Principal PM · AI Builder" description="Principal PM at ThoughtSpot, building Spotter — natural language search and agentic analytics for enterprises. I also build my own AI products.">
 
   <!-- Hero -->
   <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 border-b border-line">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid md:grid-cols-[1fr_auto] gap-12 items-start">
       <!-- Left: copy -->
-      <div>
+      <div class="max-w-xl">
         <p class="text-[10px] text-accent font-bold tracking-[0.2em] uppercase mb-5">
-          AI Builder · AI PM · Bangalore
+          Principal PM · AI Builder · Bangalore
         </p>
         <h1 class="text-5xl font-black text-ink tracking-tightest leading-[1.02] mb-6">
-          I scope and<br/>build the AI layer.
+          I build AI products<br/>that work in production.
         </h1>
         <p class="text-sm text-ink-muted leading-relaxed mb-8">
-          MCP integrations, agentic pipelines, agent frameworks — and the product thinking around them.
-          Principal PM at ThoughtSpot by day. Building on my own terms the rest of the time.
+          Principal PM at ThoughtSpot, building Spotter — natural language search and agentic
+          analytics for enterprises. I work at the intersection of NLS, causal analytics, and
+          agentic AI product development. Outside the day job, I build my own AI products —
+          travel tech, content pipelines, internal tools — because shipping is how I think.
         </p>
         <div class="flex items-center gap-4 flex-wrap">
           <a href="#work" class="text-xs bg-ink text-canvas px-4 py-2 rounded-lg hover:opacity-80 transition-opacity">
@@ -35,39 +37,30 @@ const featuredWriting = writing.slice(0, 3);
         </div>
       </div>
 
-      <!-- Right: agentic loop diagram -->
-      <div class="hidden md:flex items-center justify-center">
-        <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[260px]" aria-hidden="true">
-          <!-- outer dashed ring -->
-          <circle cx="110" cy="110" r="90" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="5,5"/>
-
-          <!-- accent arc (static) -->
-          <circle cx="110" cy="110" r="90" fill="none" stroke="var(--color-accent-border)" stroke-width="2"
-            stroke-dasharray="80,490" stroke-linecap="round" transform="rotate(-90 110 110)"/>
-
-          <!-- step boxes on the ring: top, right, bottom, left -->
-          <!-- Observe (top) -->
-          <rect x="75" y="8" width="70" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="110" y="23" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Observe</text>
-
-          <!-- Reason (right) -->
-          <rect x="160" y="99" width="54" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="187" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Reason</text>
-
-          <!-- Act (bottom) -->
-          <rect x="75" y="190" width="70" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="110" y="205" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Act</text>
-
-          <!-- Evaluate (left) -->
-          <rect x="6" y="99" width="58" height="22" rx="5" fill="var(--color-bg-card)" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="35" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text)" font-family="Inter,sans-serif">Evaluate</text>
-
-          <!-- center: Claude node -->
-          <circle cx="110" cy="110" r="36" fill="var(--color-accent-bg)" stroke="var(--color-accent-border)" stroke-width="1.5"/>
-          <text x="110" y="104" text-anchor="middle" font-size="18" fill="var(--color-accent)" font-family="Inter,sans-serif">◈</text>
-          <text x="110" y="118" text-anchor="middle" font-size="8.5" font-weight="700" fill="var(--color-accent)" font-family="Inter,sans-serif" letter-spacing="1">AGENT</text>
-          <text x="110" y="130" text-anchor="middle" font-size="7" fill="var(--color-accent)" font-family="Inter,sans-serif" opacity="0.7">Claude API</text>
-        </svg>
+      <!-- Right: what I actually build -->
+      <div class="hidden md:flex flex-col gap-3 pt-2 min-w-[200px]">
+        <div class="bg-surface border border-accent-ring rounded-xl px-4 py-3">
+          <p class="text-[9px] text-accent font-bold tracking-[0.15em] uppercase mb-1">Day job</p>
+          <p class="text-sm font-bold text-ink">Spotter</p>
+          <p class="text-[11px] text-ink-muted">NLS · Causal analytics · Enterprise AI</p>
+        </div>
+        <div class="bg-surface border border-line rounded-xl px-4 py-3">
+          <p class="text-[9px] text-ink-muted font-bold tracking-[0.15em] uppercase mb-1">Side builds</p>
+          <div class="flex flex-col gap-1.5">
+            <div>
+              <p class="text-sm font-bold text-ink">WanderingBong</p>
+              <p class="text-[11px] text-ink-muted">AI publishing pipeline · Production</p>
+            </div>
+            <div class="border-t border-line pt-1.5">
+              <p class="text-sm font-bold text-ink">Roami</p>
+              <p class="text-[11px] text-ink-muted">Travel journaling app · React Native</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-surface border border-line rounded-xl px-4 py-3">
+          <p class="text-[9px] text-ink-muted font-bold tracking-[0.15em] uppercase mb-1">Stack</p>
+          <p class="text-[11px] text-ink-muted leading-relaxed">Claude API · MCP · Node.js · Supabase · React Native</p>
+        </div>
       </div>
     </div>
   </section>
@@ -78,7 +71,7 @@ const featuredWriting = writing.slice(0, 3);
       <span class="text-[10px] text-accent font-bold tracking-[0.15em] uppercase shrink-0">Currently</span>
       <div class="w-px h-4 bg-accent-ring shrink-0"></div>
       <p class="text-xs text-ink">
-        Principal PM @ <strong>ThoughtSpot</strong> — building Spotter, an AI analytics agent used by enterprises
+        Principal PM @ <strong>ThoughtSpot</strong> — leading Spotter, natural language search and agentic analytics for enterprises
       </p>
       <span class="ml-auto text-[10px] bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2.5 py-1 rounded-full font-semibold whitespace-nowrap">
         ● Active
@@ -90,18 +83,36 @@ const featuredWriting = writing.slice(0, 3);
   <section id="work" class="max-w-4xl mx-auto px-6 py-16">
     <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-10">Selected Work</p>
 
-    <!-- 01 WanderingBong -->
+    <!-- 01 Spotter — leads now -->
+    <div class="pb-12 border-b border-line mb-12">
+      <div class="flex items-start justify-between gap-6 flex-wrap mb-4">
+        <div>
+          <p class="text-[10px] text-ink-muted mb-3 tracking-wide">01 — Enterprise AI · Principal PM</p>
+          <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Spotter @ ThoughtSpot</h2>
+        </div>
+        <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
+          ● Live · Enterprise
+        </span>
+      </div>
+      <p class="text-sm text-ink-muted leading-relaxed max-w-2xl">
+        Natural language search and agentic analytics for enterprises — letting users ask questions
+        of their data in plain English and get governed, trustworthy answers. I own the NLS
+        reasoning layer, the agentic workflow model, and the MCP integration layer.
+      </p>
+    </div>
+
+    <!-- 02 WanderingBong -->
     <div class="grid md:grid-cols-2 gap-8 pb-12 border-b border-line mb-12 items-start">
       <div>
-        <p class="text-[10px] text-ink-muted mb-3 tracking-wide">01 — AI Pipeline · Production</p>
+        <p class="text-[10px] text-ink-muted mb-3 tracking-wide">02 — AI Pipeline · Production</p>
         <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">WanderingBong</h2>
         <p class="text-sm text-ink-muted leading-relaxed mb-5">
-          A slow travel blog rebuilt around a custom AI pipeline.
-          Telegram capture → MCP server → Claude API agent → Supabase CMS → published post.
-          Trip notes in. Posts out.
+          My slow-travel blog, rebuilt around a custom AI publishing pipeline.
+          Telegram capture → Railway → Claude API → Supabase CMS → published post.
+          Three microservices, custom MCP server, running on EC2 in production.
         </p>
         <div class="flex flex-wrap gap-2 mb-5">
-          {['MCP', 'Claude API', 'Node.js', 'Supabase'].map(t => (
+          {['MCP', 'Claude API', 'Node.js', 'Supabase', 'Railway'].map(t => (
             <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
           ))}
         </div>
@@ -115,24 +126,9 @@ const featuredWriting = writing.slice(0, 3);
       </div>
     </div>
 
-    <!-- 02 Spotter -->
-    <div class="flex items-start justify-between gap-6 flex-wrap pb-12 border-b border-line mb-8">
-      <div class="flex-1 min-w-0">
-        <p class="text-[10px] text-ink-muted mb-3 tracking-wide">02 — Enterprise AI · Principal PM</p>
-        <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Spotter @ ThoughtSpot</h2>
-        <p class="text-sm text-ink-muted leading-relaxed max-w-lg">
-          AI analytics agent that moves enterprise users from "what happened" to "why it happened."
-          I own the reasoning loop, MCP integration layer, and the UI model for multi-step agentic workflows.
-        </p>
-      </div>
-      <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
-        ● Live · Enterprise
-      </span>
-    </div>
-
     <!-- More projects link -->
     <a href="/projects" class="text-sm text-accent font-bold hover:underline">
-      View all projects — Eidetic, Lyaadh, Worldview, BIRD→Snowflake →
+      View all projects — Roami, Eidetic, Lyaadh →
     </a>
   </section>
 
