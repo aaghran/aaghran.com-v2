@@ -3,10 +3,33 @@ import Layout from '../layouts/Layout.astro';
 import PipelineDiagram from '../components/PipelineDiagram.astro';
 import EngagementsBlock from '../components/EngagementsBlock.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import { getCollection } from 'astro:content';
 
-const writing = await getCollection('writing');
-const featuredWriting = writing.slice(0, 3);
+const featuredWriting = [
+  {
+    data: {
+      title: "Going back 900 years at Hoysaleswara Temple Halebidu",
+      meta: "Karnataka · Day trip from Bangalore",
+      url: "https://wanderingbong.com/blog/going-back-900-years-at-hoysaleswara-temple-halebidu-trips-from-bangalore",
+      image: "https://d2ix4gkka8i61y.cloudfront.net/1c5b982c-eb2e-4837-b59c-7c7f49283240/images/2026/01/1e3baf79a96dc166ffa08c14ca7e6ffec8949acec986723c626764218c8c2851-medium.webp",
+    }
+  },
+  {
+    data: {
+      title: "Wayanad 2026: Everything We Planned, Everything We Missed, and Why It Was Still Worth It",
+      meta: "Kerala · Travel guide",
+      url: "https://wanderingbong.com/blog/wayanad-2026-guide",
+      image: "https://d2ix4gkka8i61y.cloudfront.net/1c5b982c-eb2e-4837-b59c-7c7f49283240/images/2026/05/341d3274e206bfb497e12fc73948f9b584806cc76454b71847435f5b128ea785-medium.webp",
+    }
+  },
+  {
+    data: {
+      title: "The Other Chikmagalur: Tea Gardens, the Kudremukh Ghat, and a Loop We Almost Missed",
+      meta: "Karnataka · Road trip",
+      url: "https://wanderingbong.com/blog/chikmagalur-kudremukh-samse-tea-gardens",
+      image: "https://d2ix4gkka8i61y.cloudfront.net/1c5b982c-eb2e-4837-b59c-7c7f49283240/images/2026/04/0ccc656ef743e030cb09af4ece95ec9d571ee4dab0f940224f71a651aeb6d409-medium.webp",
+    }
+  },
+];
 ---
 <Layout title="Aaghran Ghosh — Principal PM · AI Builder" description="Principal PM at ThoughtSpot, building Spotter — natural language search and agentic analytics for enterprises. I also build my own AI products.">
 
@@ -88,53 +111,96 @@ const featuredWriting = writing.slice(0, 3);
 
     <!-- 01 Spotter — leads now -->
     <div class="pb-12 border-b border-line mb-12">
-      <div class="flex items-start justify-between gap-6 flex-wrap mb-4">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
         <div>
-          <p class="text-[10px] text-ink-muted mb-3 tracking-wide">01 — Enterprise AI · Principal PM</p>
-          <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Spotter @ ThoughtSpot</h2>
+          <div class="flex items-start justify-between gap-4 flex-wrap mb-4">
+            <div>
+              <p class="text-[10px] text-ink-muted mb-3 tracking-wide">01 — Enterprise AI · Principal PM</p>
+              <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Spotter @ ThoughtSpot</h2>
+            </div>
+            <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
+              ● Live · Enterprise
+            </span>
+          </div>
+          <p class="text-sm text-ink-muted leading-relaxed mb-5">
+            Natural language search and agentic analytics for enterprises — letting users ask questions
+            of their data in plain English and get governed, trustworthy answers. I'm on the Spotter
+            product team focused on the core agent experience and customization via Spotter Analysts.
+          </p>
+          <a href="https://www.thoughtspot.com/product/agents/spotter" target="_blank" rel="noreferrer"
+            class="text-sm text-accent font-bold hover:underline">
+            See Spotter →
+          </a>
         </div>
-        <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
-          ● Live · Enterprise
-        </span>
+        <!-- Product video -->
+        <div class="rounded-xl overflow-hidden border border-line">
+          <video
+            src="https://media.thoughtspot.com/35707/1769749943-spotter_3-promo.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-auto"
+          ></video>
+        </div>
       </div>
-      <p class="text-sm text-ink-muted leading-relaxed max-w-2xl mb-5">
-        Natural language search and agentic analytics for enterprises — letting users ask questions
-        of their data in plain English and get governed, trustworthy answers. I'm on the Spotter
-        product team focused on the core agent experience and customization via Spotter Analysts.
-      </p>
-      <a href="https://www.thoughtspot.com/product/agents/spotter" target="_blank" rel="noreferrer"
-        class="text-sm text-accent font-bold hover:underline">
-        See Spotter →
-      </a>
     </div>
 
     <!-- 02 WanderingBong -->
-    <div class="grid md:grid-cols-2 gap-8 pb-12 border-b border-line mb-12 items-start">
-      <div>
-        <p class="text-[10px] text-ink-muted mb-3 tracking-wide">02 — AI Pipeline · Production</p>
-        <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">WanderingBong</h2>
-        <p class="text-sm text-ink-muted leading-relaxed mb-5">
-          My slow-travel blog, rebuilt around a custom AI publishing pipeline.
-          Telegram capture → Railway → Claude API → Supabase CMS → published post.
-          Three microservices, custom MCP server, running on EC2 in production.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-5">
-          {['MCP', 'Claude API', 'Node.js', 'Supabase', 'Railway'].map(t => (
-            <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
-          ))}
+    <div class="pb-12 border-b border-line mb-12">
+      <div class="grid md:grid-cols-2 gap-8 items-start mb-6">
+        <div>
+          <p class="text-[10px] text-ink-muted mb-3 tracking-wide">02 — Travel blog · MCP-connected</p>
+          <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">WanderingBong</h2>
+          <p class="text-sm text-ink-muted leading-relaxed mb-5">
+            A slow-travel blog I've run for years — through WordPress, Strapi, and eventually
+            a backend I built myself. Now MCP-connected: agents handle tags, linking, SEO, and metadata.
+            I show up with the experience. They handle everything around it.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            {['MCP', 'Claude API', 'Node.js', 'Supabase'].map(t => (
+              <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
+            ))}
+          </div>
+          <div class="flex gap-5">
+            <a href="https://wanderingbong.com" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">
+              Live blog →
+            </a>
+            <a href="/projects/wanderingbong" class="text-sm text-ink-muted hover:text-ink transition-colors">
+              Full story →
+            </a>
+          </div>
         </div>
-        <div class="flex gap-5">
-          <a href="https://wanderingbong.com" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">
-            Live blog →
-          </a>
-          <a href="/projects/wanderingbong" class="text-sm text-ink-muted hover:text-ink transition-colors">
-            Full story →
-          </a>
-        </div>
+        <!-- Screenshot -->
+        <a href="https://wanderingbong.com" target="_blank" rel="noreferrer" class="block rounded-xl overflow-hidden border border-line hover:border-accent transition-colors">
+          <img
+            src="https://d2ix4gkka8i61y.cloudfront.net/1c5b982c-eb2e-4837-b59c-7c7f49283240/images/2026/01/2ddb957aef680d67c692e965e7648c6df39ad9554c8f231c3a38005f8a2a93bb-medium.jpeg"
+            alt="WanderingBong — Thailand's Slow Coast"
+            class="w-full h-48 object-cover"
+          />
+        </a>
       </div>
-      <div class="bg-surface border border-line rounded-xl p-5">
-        <p class="text-[9px] text-ink-muted tracking-[0.15em] uppercase mb-3">Publishing pipeline</p>
-        <PipelineDiagram />
+      <!-- Photo strip -->
+      <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+        {[
+          'c73703e3f59452cca9a1b4176a0750db44725c0b851df0d876988eaad26dc2a9',
+          'dc668cfbbf33ff39b9151bde46567e03ef0537ea6bca19c95b7d2ad64ce58564',
+          'bfa3c0163282b6625ed442dd143d55730a382d4f4635979e6c410cdb6e2471de',
+          '2ca220c9e919e71a652c2914da511d4b38a8fef511f4cdbd4b58bc83572fb8db',
+          'dfc21ec82581e69dab13046445c699f406ad117d7c44fbebbb2325b6021aa909',
+          'ed74a5533e801880f82295a8ed5b246c2303dbe06e4287effe32e46d816274af',
+          '4af4b02279685cd5ceeb85eeef41b20f15ad2eb04bac1381644cb83ecec07d42',
+        ].map(hash => (
+          <img
+            src={`https://d2ix4gkka8i61y.cloudfront.net/1c5b982c-eb2e-4837-b59c-7c7f49283240/images/2026/01/${hash}-medium.jpeg`}
+            alt="WanderingBong travel photo"
+            class="h-24 w-36 object-cover rounded-lg shrink-0"
+          />
+        ))}
+        <a href="https://wanderingbong.com/galleries/featured" target="_blank" rel="noreferrer"
+          class="h-24 w-24 rounded-lg shrink-0 bg-surface border border-line flex items-center justify-center text-[10px] text-accent font-bold hover:border-accent transition-colors text-center px-2">
+          View all →
+        </a>
       </div>
     </div>
 
@@ -151,7 +217,7 @@ const featuredWriting = writing.slice(0, 3);
 
   <!-- Writing preview -->
   <section class="max-w-4xl mx-auto px-6 pb-20 border-t border-line pt-16">
-    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-8">Writing</p>
+    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-8">Travel Stories · WanderingBong</p>
     <div class="grid sm:grid-cols-3 gap-4 mb-6">
       {featuredWriting.map(w => (
         <ArticleCard
@@ -162,9 +228,9 @@ const featuredWriting = writing.slice(0, 3);
         />
       ))}
     </div>
-    <a href="https://aaghran.substack.com" target="_blank" rel="noreferrer"
+    <a href="https://wanderingbong.com" target="_blank" rel="noreferrer"
       class="text-sm text-accent font-bold hover:underline">
-      All writing on Substack →
+      All travel stories on WanderingBong →
     </a>
   </section>
 

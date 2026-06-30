@@ -7,9 +7,13 @@ import { workExperience } from '../data/work';
   <div class="max-w-2xl mx-auto px-6 py-16">
     <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-3">Experience</p>
     <h1 class="text-4xl font-black text-ink tracking-tightest mb-3">Work</h1>
-    <p class="text-sm text-ink-muted mb-12 max-w-lg">
+    <p class="text-sm text-ink-muted mb-4 max-w-lg">
       Nine years across PM and engineering roles. Currently building AI at enterprise scale.
     </p>
+    <a href="https://www.linkedin.com/in/aaghran/" target="_blank" rel="noreferrer"
+      class="inline-flex items-center gap-2 text-xs text-accent font-semibold hover:underline mb-12">
+      <i class="fa-brands fa-linkedin"></i> View full profile on LinkedIn →
+    </a>
     <div class="space-y-4">
       {workExperience.map(job => (
         <WorkCard
