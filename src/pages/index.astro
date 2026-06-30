@@ -39,21 +39,24 @@ const featuredWriting = writing.slice(0, 3);
 
       <!-- Right: what I actually build -->
       <div class="hidden md:flex flex-col gap-3 pt-2 min-w-[200px]">
-        <div class="bg-surface border border-accent-ring rounded-xl px-4 py-3">
+        <a href="https://www.thoughtspot.com/product/agents/spotter" target="_blank" rel="noreferrer"
+          class="bg-surface border border-accent-ring rounded-xl px-4 py-3 hover:border-accent transition-colors block">
           <p class="text-[9px] text-accent font-bold tracking-[0.15em] uppercase mb-1">Day job</p>
-          <p class="text-sm font-bold text-ink">Spotter</p>
+          <p class="text-sm font-bold text-ink">Spotter @ ThoughtSpot ↗</p>
           <p class="text-[11px] text-ink-muted">NLS · Causal analytics · Enterprise AI</p>
-        </div>
+        </a>
         <div class="bg-surface border border-line rounded-xl px-4 py-3">
           <p class="text-[9px] text-ink-muted font-bold tracking-[0.15em] uppercase mb-1">Side builds</p>
           <div class="flex flex-col gap-1.5">
-            <div>
-              <p class="text-sm font-bold text-ink">WanderingBong</p>
+            <a href="https://wanderingbong.com" target="_blank" rel="noreferrer" class="hover:text-accent transition-colors">
+              <p class="text-sm font-bold text-ink">WanderingBong ↗</p>
               <p class="text-[11px] text-ink-muted">AI publishing pipeline · Production</p>
-            </div>
+            </a>
             <div class="border-t border-line pt-1.5">
-              <p class="text-sm font-bold text-ink">Roami</p>
-              <p class="text-[11px] text-ink-muted">Travel journaling app · React Native</p>
+              <a href="https://roami.xyz" target="_blank" rel="noreferrer" class="hover:text-accent transition-colors block">
+                <p class="text-sm font-bold text-ink">Roami ↗</p>
+                <p class="text-[11px] text-ink-muted">Travel journaling app · React Native</p>
+              </a>
             </div>
           </div>
         </div>
@@ -94,11 +97,15 @@ const featuredWriting = writing.slice(0, 3);
           ● Live · Enterprise
         </span>
       </div>
-      <p class="text-sm text-ink-muted leading-relaxed max-w-2xl">
+      <p class="text-sm text-ink-muted leading-relaxed max-w-2xl mb-5">
         Natural language search and agentic analytics for enterprises — letting users ask questions
-        of their data in plain English and get governed, trustworthy answers. I own the NLS
-        reasoning layer, the agentic workflow model, and the MCP integration layer.
+        of their data in plain English and get governed, trustworthy answers. I'm on the Spotter
+        product team focused on the core agent experience and customization via Spotter Analysts.
       </p>
+      <a href="https://www.thoughtspot.com/product/agents/spotter" target="_blank" rel="noreferrer"
+        class="text-sm text-accent font-bold hover:underline">
+        See Spotter →
+      </a>
     </div>
 
     <!-- 02 WanderingBong -->
@@ -116,9 +123,14 @@ const featuredWriting = writing.slice(0, 3);
             <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
           ))}
         </div>
-        <a href="/projects/wanderingbong" class="text-sm text-accent font-bold hover:underline">
-          Read the full story →
-        </a>
+        <div class="flex gap-5">
+          <a href="https://wanderingbong.com" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">
+            Live blog →
+          </a>
+          <a href="/projects/wanderingbong" class="text-sm text-ink-muted hover:text-ink transition-colors">
+            Full story →
+          </a>
+        </div>
       </div>
       <div class="bg-surface border border-line rounded-xl p-5">
         <p class="text-[9px] text-ink-muted tracking-[0.15em] uppercase mb-3">Publishing pipeline</p>
