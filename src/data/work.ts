@@ -63,7 +63,7 @@ export const workExperience: WorkEntry[] = [
   },
   {
     company: "Via.com",
-    role: "Product Manager → UI Developer",
+    role: "UI Developer → Product Manager",
     duration: "June 2015 – December 2017",
     location: "Bengaluru",
     bullets: [
