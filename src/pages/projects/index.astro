@@ -1,28 +1,216 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-import { getCollection } from 'astro:content';
-
-const projects = await getCollection('projects');
 ---
-<Layout title="Projects — Aaghran Ghosh">
+<Layout title="Projects — Aaghran Ghosh" description="A decade of building — from DevOps and full-stack development to AI products at enterprise scale and side projects I ship and run myself.">
   <div class="max-w-4xl mx-auto px-6 py-16">
-    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-3">Building</p>
-    <h1 class="text-4xl font-black text-ink tracking-tightest mb-3">Projects</h1>
-    <p class="text-sm text-ink-muted mb-12 max-w-lg">
-      Production systems, tools I built for myself, and experiments worth sharing.
-      WanderingBong is the primary live system. The rest are proofs of work.
+
+    <!-- Narrative intro -->
+    <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-6">Journey</p>
+    <p class="text-lg text-ink-muted leading-relaxed max-w-2xl mb-4">
+      Started tinkering with PC builds and web projects in college. Moved into AWS, DevOps,
+      and full-stack development at Via.com. Crossed into product at ZipGo, SIXT, Hevo,
+      and ThoughtSpot. Now building AI products at enterprise scale — and shipping my own on the side.
     </p>
-    <div class="grid sm:grid-cols-2 gap-4">
-      {projects.map(p => (
-        <ProjectCard
-          title={p.data.title}
-          tag={p.data.tag}
-          description={p.data.description}
-          url={p.data.url}
-          href={`/projects/${p.id}`}
-        />
-      ))}
+    <a href="/work" class="text-sm text-accent font-bold hover:underline">Full work history →</a>
+
+    <!-- Section 1: Day Job -->
+    <div class="border-t border-line pt-16 mt-16">
+      <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-1">Day job</p>
+      <p class="text-xs text-ink-muted mb-10">What I do full-time.</p>
+
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <div class="flex items-start justify-between gap-4 flex-wrap mb-4">
+            <div>
+              <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Enterprise AI · Principal PM</p>
+              <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Spotter @ ThoughtSpot</h2>
+            </div>
+            <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
+              ● Live · Enterprise
+            </span>
+          </div>
+          <p class="text-sm text-ink-muted leading-relaxed mb-5">
+            Natural language search and agentic analytics for enterprises — letting users ask questions
+            of their data in plain English and get governed, trustworthy answers. I'm on the Spotter
+            product team focused on the core agent experience and customization via Spotter Analysts.
+          </p>
+          <a href="https://www.thoughtspot.com/product/agents/spotter" target="_blank" rel="noreferrer"
+            class="text-sm text-accent font-bold hover:underline">
+            See Spotter →
+          </a>
+        </div>
+        <div class="rounded-xl overflow-hidden border border-line">
+          <video
+            src="https://media.thoughtspot.com/35707/1769749943-spotter_3-promo.mp4"
+            autoplay muted loop playsinline
+            class="w-full h-auto"
+          ></video>
+        </div>
+      </div>
     </div>
+
+    <!-- Section 2: Side Builds -->
+    <div class="border-t border-line pt-16 mt-16">
+      <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-1">Side builds</p>
+      <p class="text-xs text-ink-muted mb-10">Things I built and run myself.</p>
+
+      <!-- WanderingBong -->
+      <div class="pb-12 border-b border-line mb-12">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Travel blog · MCP-connected</p>
+            <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">WanderingBong</h2>
+            <p class="text-sm text-ink-muted leading-relaxed mb-5">
+              A slow-travel blog I've run since 2015 — through WordPress, Strapi, and eventually
+              a backend I built myself. Now MCP-connected: agents handle tags, linking, SEO, and
+              metadata. I show up with the experience. They handle everything around it.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {['MCP', 'Claude API', 'Node.js', 'Supabase'].map(t => (
+                <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
+              ))}
+            </div>
+            <div class="flex gap-5">
+              <a href="https://wanderingbong.com" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">Live blog →</a>
+              <a href="/projects/wanderingbong" class="text-sm text-ink-muted hover:text-ink transition-colors">Full story →</a>
+            </div>
+          </div>
+          <a href="https://wanderingbong.com" target="_blank" rel="noreferrer"
+            class="block rounded-xl overflow-hidden border border-line hover:border-accent transition-colors">
+            <img
+              src="https://d2ix4gkka8i61y.cloudfront.net/1c5b982c-eb2e-4837-b59c-7c7f49283240/images/2026/01/2ddb957aef680d67c692e965e7648c6df39ad9554c8f231c3a38005f8a2a93bb-medium.jpeg"
+              alt="WanderingBong"
+              class="w-full h-48 object-cover"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Roami -->
+      <div class="pb-12 border-b border-line mb-12">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Travel app · React Native</p>
+            <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Roami</h2>
+            <p class="text-sm text-ink-muted leading-relaxed mb-5">
+              A travel journaling app built to replace the Notes-app chaos of actual travel.
+              Dark editorial design, Supabase backend, self-tested on a multi-island trip in Thailand.
+              The productized version of the WanderingBong pipeline — for anyone, not just me.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {['React Native', 'Expo', 'Supabase', 'TypeScript'].map(t => (
+                <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
+              ))}
+            </div>
+            <div class="flex gap-5">
+              <a href="https://roami.xyz" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">roami.xyz →</a>
+              <a href="/projects/roami" class="text-sm text-ink-muted hover:text-ink transition-colors">Full story →</a>
+            </div>
+          </div>
+          <div class="rounded-xl bg-surface border border-line p-6 flex items-center justify-center min-h-[12rem]">
+            <div class="text-center">
+              <p class="text-2xl font-black text-ink tracking-tightest mb-2">Roami</p>
+              <p class="text-xs text-ink-muted">Travel journaling, without the friction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lyaadh -->
+      <div>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Brand · Lifestyle</p>
+            <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Lyaadh</h2>
+            <p class="text-sm text-ink-muted leading-relaxed mb-5">
+              Bengali for the art of pleasurable lethargy. A brand built around doing less, better —
+              ShortCuts (a task shrinker with a Coma Mode), Dokan (curated gear for doing nothing),
+              and slow travel. Tagline: The Art of Productive Laziness.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {['Next.js', 'Supabase', 'Tailwind'].map(t => (
+                <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
+              ))}
+            </div>
+            <div class="flex gap-5">
+              <a href="https://lyaadh.com" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">lyaadh.com →</a>
+              <a href="/projects/lyaadh" class="text-sm text-ink-muted hover:text-ink transition-colors">Full story →</a>
+            </div>
+          </div>
+          <div class="rounded-xl bg-surface border border-line p-6 flex items-center justify-center min-h-[12rem]">
+            <div class="text-center">
+              <p class="text-2xl font-black text-ink tracking-tightest mb-2">Lyaadh</p>
+              <p class="text-xs text-ink-muted italic">The Art of Productive Laziness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Experiments -->
+    <div class="border-t border-line pt-16 mt-16">
+      <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-1">Experiments</p>
+      <p class="text-xs text-ink-muted mb-10">Built to learn. Some still running.</p>
+
+      <div class="grid sm:grid-cols-3 gap-4">
+        <!-- Eidetic -->
+        <a href="/projects/eidetic"
+          class="bg-surface border border-line rounded-xl p-5 hover:border-accent-ring transition-colors block group">
+          <p class="text-[10px] text-ink-muted mb-3">Knowledge Graph · MCP</p>
+          <h3 class="text-base font-black text-ink tracking-tightest mb-2 group-hover:text-accent transition-colors">Eidetic</h3>
+          <p class="text-xs text-ink-muted leading-relaxed mb-4">
+            Chrome extension + mobile app + MCP server. Captures anything I read, makes it searchable by Claude mid-conversation.
+          </p>
+          <div class="flex flex-wrap gap-1">
+            {['MCP', 'pgvector', 'FastAPI'].map(t => (
+              <span class="text-[9px] bg-accent-subtle border border-accent-ring text-accent px-1.5 py-0.5 rounded-full">{t}</span>
+            ))}
+          </div>
+        </a>
+
+        <!-- BIRD → Snowflake -->
+        <a href="https://github.com/aaghran/bird-snowflake-loader" target="_blank" rel="noreferrer"
+          class="bg-surface border border-line rounded-xl p-5 hover:border-accent-ring transition-colors block group">
+          <p class="text-[10px] text-ink-muted mb-3">NLS · Benchmarking · Open source</p>
+          <h3 class="text-base font-black text-ink tracking-tightest mb-2 group-hover:text-accent transition-colors">BIRD → Snowflake</h3>
+          <p class="text-xs text-ink-muted leading-relaxed mb-4">
+            Nobody had built a Snowflake loader for the BIRD NL-to-SQL benchmark. I needed one for evaluating Spotter, so I built it and open-sourced it.
+          </p>
+          <div class="flex flex-wrap gap-1">
+            {['Python', 'Snowflake', 'pandas'].map(t => (
+              <span class="text-[9px] bg-accent-subtle border border-accent-ring text-accent px-1.5 py-0.5 rounded-full">{t}</span>
+            ))}
+          </div>
+        </a>
+
+        <!-- Worldview -->
+        <a href="/projects/worldview"
+          class="bg-surface border border-line rounded-xl p-5 hover:border-accent-ring transition-colors block group">
+          <p class="text-[10px] text-ink-muted mb-3">Data Viz · 3D Globe</p>
+          <h3 class="text-base font-black text-ink tracking-tightest mb-2 group-hover:text-accent transition-colors">Worldview</h3>
+          <p class="text-xs text-ink-muted leading-relaxed mb-4">
+            Every tracked satellite in orbit, right now. CelesTrak TLE data, satellite.js propagation, Mapbox GL v3 globe. Scrub through time.
+          </p>
+          <div class="flex flex-wrap gap-1">
+            {['Mapbox GL', 'satellite.js', 'Three.js'].map(t => (
+              <span class="text-[9px] bg-accent-subtle border border-accent-ring text-accent px-1.5 py-0.5 rounded-full">{t}</span>
+            ))}
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 4: Earlier Work -->
+    <div class="border-t border-line pt-16 mt-16">
+      <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-1">Earlier</p>
+      <p class="text-xs text-ink-muted mb-8">Where it started.</p>
+      <p class="text-sm text-ink-muted leading-relaxed max-w-2xl mb-6">
+        Before product, I was a developer. Built SEO systems and frontend tooling at Via.com —
+        a Node.js + Redis content platform across 8 countries and 5 languages, driving a 200% increase
+        in organic traffic. Before that, AWS, DevOps, and more PC builds than I should have spent money on.
+      </p>
+      <a href="/work" class="text-sm text-accent font-bold hover:underline">Full work history →</a>
+    </div>
+
   </div>
 </Layout>
