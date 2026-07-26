@@ -1,0 +1,33 @@
+# Aaghran Ghosh
+
+> Principal PM and AI builder based in Bangalore. Builds AI products that work in production — MCP integrations, agentic pipelines, and the product thinking around them.
+
+Principal PM at ThoughtSpot, building Spotter (natural language search and agentic analytics for enterprises). Also ships personal AI products and writes about AI agents, MCP, and slow travel.
+
+## Site
+
+- [Home](https://aaghran.com/): Overview, selected projects, writing, and contact
+- [Projects](https://aaghran.com/projects/): Side projects and open-source work
+- [Work](https://aaghran.com/work/): Professional experience
+- [Writing](https://aaghran.com/writing/): AI/product essays (Substack) and travel writing (Medium / WanderingBong)
+
+## Projects
+
+- [WanderingBong](https://aaghran.com/projects/wanderingbong/): Slow-travel blog (since 2015), now MCP-connected for content ops
+- [Eidetic](https://aaghran.com/projects/eidetic/): Capture-and-search memory — Chrome extension, mobile app, FastAPI + pgvector, MCP server
+- [Roami](https://aaghran.com/projects/roami/): Travel journaling app designed and shipped end-to-end
+- [Worldview](https://aaghran.com/projects/worldview/): Live satellite globe from CelesTrak orbital data
+- [Lyaadh](https://aaghran.com/projects/lyaadh/): Brand around productive laziness (ShortCuts, Dokan, Escapes)
+- [BIRD → Snowflake](https://aaghran.com/projects/bird-loader/): Open-source Snowflake loader for the BIRD NL-to-SQL benchmark
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/aaghran/)
+- [GitHub](https://github.com/aaghran)
+- [Substack](https://aaghran.substack.com)
+- [WanderingBong](https://wanderingbong.com)
+- Email: aaghran@gmail.com
+
+## Optional
+
+- [Sitemap](https://aaghran.com/sitemap-index.xml)

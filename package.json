@@ -5,11 +5,12 @@
   "type": "module",
   "homepage": "https://aaghran.com",
   "scripts": {
-    "dev":   "astro dev",
+    "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^7.0.3",
     "tailwindcss": "^3.4.19"

@@ -4,11 +4,61 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  ogType?: 'website' | 'article' | 'profile';
 }
 const {
   title = 'Aaghran Ghosh — AI Builder',
   description = 'I scope and build the AI layer. MCP integrations, agentic pipelines, and the product thinking around them.',
+  ogType = 'website',
 } = Astro.props;
+
+const site = Astro.site ?? new URL('https://aaghran.com');
+const canonical = new URL(Astro.url.pathname, site).href;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Aaghran Ghosh',
+  url: site.href,
+  jobTitle: 'Principal Product Manager',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'ThoughtSpot',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bangalore',
+    addressCountry: 'IN',
+  },
+  email: 'mailto:aaghran@gmail.com',
+  sameAs: [
+    'https://www.linkedin.com/in/aaghran/',
+    'https://github.com/aaghran',
+    'https://aaghran.substack.com',
+    'https://wanderingbong.com',
+  ],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Aaghran Ghosh',
+  url: site.href,
+  description:
+    'Principal PM at ThoughtSpot building Spotter. AI products, MCP integrations, and agentic pipelines.',
+  author: { '@type': 'Person', name: 'Aaghran Ghosh' },
+};
+
+const webpageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: canonical,
+  isPartOf: { '@type': 'WebSite', name: 'Aaghran Ghosh', url: site.href },
+  author: { '@type': 'Person', name: 'Aaghran Ghosh' },
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -17,11 +67,39 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Aaghran Ghosh" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Aaghran Ghosh" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111110" media="(prefers-color-scheme: dark)" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    {isHome ? (
+      <>
+        <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+        <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+      </>
+    ) : (
+      <script type="application/ld+json" set:html={JSON.stringify(webpageJsonLd)} />
+    )}
 
     <!-- Dark mode: inline to prevent FOUC -->
     <script is:inline>

@@ -7,7 +7,7 @@ const writing = await getCollection('writing');
 const technical = writing.filter(w => w.data.meta.includes('Substack'));
 const travel    = writing.filter(w => w.data.meta.includes('Medium'));
 ---
-<Layout title="Writing — Aaghran Ghosh">
+<Layout title="Writing — Aaghran Ghosh" description="Thoughts on AI agents, MCP, and product building — plus slow travel stories from places I've actually been.">
   <div class="max-w-4xl mx-auto px-6 py-16">
     <p class="text-[10px] text-ink-muted tracking-[0.25em] uppercase mb-3">Writing</p>
     <h1 class="text-4xl font-black text-ink tracking-tightest mb-3">Articles</h1>
