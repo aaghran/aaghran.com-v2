@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aaghran.com/sitemap-index.xml
+Sitemap: https://aaghran.com/sitemap.xml

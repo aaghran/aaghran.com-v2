@@ -30,4 +30,4 @@ Principal PM at ThoughtSpot, building Spotter (natural language search and agent
 
 ## Optional
 
-- [Sitemap](https://aaghran.com/sitemap-index.xml)
+- [Sitemap](https://aaghran.com/sitemap.xml)
