@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 
 const writing = await getCollection('writing');
 const technical = writing.filter(w => w.data.meta.includes('Substack'));
-const travel    = writing.filter(w => w.data.meta.includes('Medium'));
+const travel    = writing.filter(w => w.data.meta.includes('WanderingBong'));
 ---
 <Layout title="Writing — Aaghran Ghosh" description="Thoughts on AI agents, MCP, and product building — plus slow travel stories from places I've actually been.">
   <div class="max-w-4xl mx-auto px-6 py-16">

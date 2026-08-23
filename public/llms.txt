@@ -9,7 +9,7 @@ Principal PM at ThoughtSpot, building Spotter (natural language search and agent
 - [Home](https://aaghran.com/): Overview, selected projects, writing, and contact
 - [Projects](https://aaghran.com/projects/): Side projects and open-source work
 - [Work](https://aaghran.com/work/): Professional experience
-- [Writing](https://aaghran.com/writing/): AI/product essays (Substack) and travel writing (Medium / WanderingBong)
+- [Writing](https://aaghran.com/writing/): AI/product essays (Substack) and travel writing (WanderingBong)
 
 ## Projects
 
