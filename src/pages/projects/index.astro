@@ -90,15 +90,15 @@ import Layout from '../../layouts/Layout.astro';
       <div class="pb-12 border-b border-line mb-12">
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
-            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Travel app · React Native</p>
+            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Agent-connected CMS · MCP</p>
             <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Roami</h2>
             <p class="text-sm text-ink-muted leading-relaxed mb-5">
-              A travel journaling app built to replace the Notes-app chaos of actual travel.
-              Dark editorial design, Supabase backend, self-tested on a multi-island trip in Thailand.
-              The productized version of the WanderingBong pipeline — for anyone, not just me.
+              Started as a travel journaling app for myself. Became a CMS built for agents to run
+              directly — 72 MCP tools, a real commerce/affiliate pipeline, WanderingBong running on
+              it as Customer Zero.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-              {['React Native', 'Expo', 'Supabase', 'TypeScript'].map(t => (
+              {['MCP', 'Next.js', 'PostgreSQL', 'React Native'].map(t => (
                 <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
               ))}
             </div>
@@ -122,15 +122,15 @@ import Layout from '../../layouts/Layout.astro';
       <div>
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
-            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Brand · Lifestyle</p>
+            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Brand · In Progress</p>
             <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Lyaadh</h2>
             <p class="text-sm text-ink-muted leading-relaxed mb-5">
-              Bengali for the art of pleasurable lethargy. A brand built around doing less, better —
-              ShortCuts (a task shrinker with a Coma Mode), Dokan (curated gear for doing nothing),
-              and slow travel. Tagline: The Art of Productive Laziness.
+              Bengali for the art of pleasurable lethargy. A brand I'm building slowly and honestly —
+              one published piece so far, the actual product (a slow, anti-productivity browser game)
+              still at the concept-picking stage. Built with my partner, who owns the writing.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-              {['Next.js', 'Supabase', 'Tailwind'].map(t => (
+              {['Next.js', 'Tailwind'].map(t => (
                 <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
               ))}
             </div>
@@ -167,6 +167,21 @@ import Layout from '../../layouts/Layout.astro';
           </p>
           <div class="flex flex-wrap gap-1">
             {['MCP', 'pgvector', 'FastAPI'].map(t => (
+              <span class="text-[9px] bg-accent-subtle border border-accent-ring text-accent px-1.5 py-0.5 rounded-full">{t}</span>
+            ))}
+          </div>
+        </a>
+
+        <!-- Jarvis -->
+        <a href="/projects/jarvis"
+          class="bg-surface border border-line rounded-xl p-5 hover:border-accent-ring transition-colors block group">
+          <p class="text-[10px] text-ink-muted mb-3">Personal OS · MCP</p>
+          <h3 class="text-base font-black text-ink tracking-tightest mb-2 group-hover:text-accent transition-colors">Jarvis</h3>
+          <p class="text-xs text-ink-muted leading-relaxed mb-4">
+            An agent-facing layer over my own workspace — context and tools an agent can act on directly, like giving it a butler's briefing instead of a chat window.
+          </p>
+          <div class="flex flex-wrap gap-1">
+            {['MCP', 'Next.js', 'TypeScript'].map(t => (
               <span class="text-[9px] bg-accent-subtle border border-accent-ring text-accent px-1.5 py-0.5 rounded-full">{t}</span>
             ))}
           </div>

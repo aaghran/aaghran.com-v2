@@ -1,0 +1,10 @@
+{
+  "title": "Jarvis",
+  "tag": "Personal OS · MCP",
+  "description": "An agent-facing layer over my own workspace — project context, git activity, portfolio data — so the agents I work with can read real state directly instead of me re-explaining it every session. Part of a broader bet: give agents a butler's context and tools to act on, not just a chat window.",
+  "lede": "I got tired of re-explaining context to an agent every session. So I gave it a place to read from directly.",
+  "story": "Every project I run generates its own trail of decisions, TODOs, and half-finished threads — in markdown files, in git commits, in chat transcripts that evaporate. The expensive part of working with an agent was never the work itself, it was re-establishing context every time I opened a new session.\n\nJarvis is my attempt at treating an agent like an actual butler rather than a search box: a layer that reads my own workspace directly — project context, commit activity, portfolio data — and hands it to whatever agent I'm working with, including the one that helped write this page. Instead of me summarizing status from memory, the agent reads the same source of truth I do.\n\nIt's less a single app and more a pattern I keep reaching for now: build the agent a place to read and act from directly, rather than a bigger prompt to explain things to. The daily/weekly view is for me; the underlying interface is for whichever agent needs it next.",
+  "stack": ["Next.js", "TypeScript", "MCP", "Node.js"],
+  "url": null,
+  "showPipelineDiagram": false
+}
