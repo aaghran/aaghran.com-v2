@@ -14,6 +14,7 @@ export const workExperience: WorkEntry[] = [
     location: "Bengaluru",
     bullets: [
       "Building Spotter — ThoughtSpot's AI analytics agent. I own the agent's reasoning loop, the MCP integration layer, and the UI model for multi-step agentic workflows. NLS and agentic analytics at enterprise scale.",
+      "Spotter Analysts (launched): specialist AI analysts per team. Admins pick the certified data models, tools, and instructions, so a Supply Chain Analyst answers in supply chain terms.",
       "Agentic UI & User Experience: Design and frontend evolution of the Spotter Agent UI, focusing on a seamless interaction model for complex, multi-step agentic workflows.",
       "MCP Integration: ThoughtSpot's adoption of the Model Context Protocol, enabling Spotter to act as an MCP Host and securely pull context from external tools.",
       "Core Agent Engine: Autonomous reasoning and reliability — ensuring the AI can plan, execute, and self-correct its own analytical paths.",

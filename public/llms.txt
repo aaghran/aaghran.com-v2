@@ -2,7 +2,7 @@
 
 > Principal PM and AI builder based in Bangalore. Builds AI products that work in production — MCP integrations, agentic pipelines, and the product thinking around them.
 
-Principal PM at ThoughtSpot, building Spotter (natural language search and agentic analytics for enterprises). Also ships personal AI products and writes about AI agents, MCP, and slow travel.
+Principal PM at ThoughtSpot, building Spotter (natural language search and agentic analytics for enterprises), including the launch of Spotter Analysts, a specialist AI analyst for each team. Also ships personal AI products and writes about AI agents, MCP, and slow travel.
 
 ## Site
 
