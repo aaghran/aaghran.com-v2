@@ -206,35 +206,55 @@ const featuredWriting = [
 
     <!-- 03 RoamiOS -->
     <div class="pb-12 border-b border-line mb-12">
-      <div class="max-w-2xl">
-        <div class="flex items-start justify-between gap-4 flex-wrap mb-4">
-          <div>
-            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">03 — Agent-native CMS · Founder &amp; PM</p>
-            <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">RoamiOS</h2>
+      <div class="grid md:grid-cols-2 gap-8 items-start mb-6">
+        <div>
+          <div class="flex items-start justify-between gap-4 flex-wrap mb-4">
+            <div>
+              <p class="text-[10px] text-ink-muted mb-3 tracking-wide">03 — Agent-native CMS · Founder &amp; PM</p>
+              <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">RoamiOS</h2>
+            </div>
+            <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
+              ● In beta
+            </span>
           </div>
-          <span class="text-[10px] bg-ink text-canvas px-3 py-1.5 rounded-full font-semibold whitespace-nowrap self-start mt-1">
-            ● In beta
-          </span>
+          <p class="text-sm text-ink leading-relaxed mb-3 font-semibold">A founder's note.</p>
+          <p class="text-sm text-ink-muted leading-relaxed mb-3">
+            I built RoamiOS because WanderingBong outgrew every CMS I put it on. After each post I was still
+            doing the admin: tags, internal links, cover images, meta descriptions, checking Search Console
+            for what to write next.
+          </p>
+          <p class="text-sm text-ink-muted leading-relaxed mb-5">
+            Today WanderingBong runs on it. My agent connects over MCP, works the queue (missing covers,
+            thin metadata, untold trips, queries sitting just off page one) and hands me drafts to review.
+            I write and publish. The agent can't, by design, and that gate lives in the API.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-5">
+            {['MCP', 'TypeScript', 'Next.js', 'PostgreSQL', 'Prisma'].map(t => (
+              <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
+            ))}
+          </div>
+          <div class="flex gap-5">
+            <a href="https://roami.xyz" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">
+              See Roami →
+            </a>
+            <a href="/projects/roami" class="text-sm text-ink-muted hover:text-ink transition-colors">
+              Full story →
+            </a>
+          </div>
         </div>
-        <p class="text-sm text-ink-muted leading-relaxed mb-5">
-          A CMS built on one idea: your AI agent is already part of the workflow. Connect Claude, Cursor
-          or Gemini over MCP and the agent drafts, tags, links, audits SEO and finds growth gaps from your
-          Search Console data. You publish. That last step is gated at the API, permanently. WanderingBong
-          runs on it today, from posts and photo stories to maps and affiliate pages.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-5">
-          {['MCP', 'TypeScript', 'Next.js', 'PostgreSQL', 'Prisma'].map(t => (
-            <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
-          ))}
-        </div>
-        <div class="flex gap-5">
-          <a href="https://roami.xyz" target="_blank" rel="noreferrer" class="text-sm text-accent font-bold hover:underline">
-            See Roami →
-          </a>
-          <a href="/projects/roami" class="text-sm text-ink-muted hover:text-ink transition-colors">
-            Full story →
-          </a>
-        </div>
+        <a href="https://roami.xyz" target="_blank" rel="noreferrer" class="block rounded-xl overflow-hidden border border-line hover:border-accent transition-colors">
+          <img
+            src="/assets/roami/dashboard.jpg"
+            alt="RoamiOS dashboard for the WanderingBong project: write queue, search velocity, content and media counts"
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </a>
+      </div>
+      <p class="text-[10px] text-ink-muted tracking-wide mb-3">WanderingBong, running on RoamiOS today</p>
+      <div class="grid grid-cols-2 gap-3">
+        <img src="/assets/roami/queue.jpg" alt="RoamiOS queue: fixes waiting on the human, work ready to hand to an agent" class="rounded-lg border border-line w-full h-auto" loading="lazy" />
+        <img src="/assets/roami/seo.jpg" alt="RoamiOS search performance: striking-distance queries from Search Console" class="rounded-lg border border-line w-full h-auto" loading="lazy" />
       </div>
     </div>
 
