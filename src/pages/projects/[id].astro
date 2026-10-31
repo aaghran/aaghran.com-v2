@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { title, tag, lede, story, stack, url, showPipelineDiagram } = project.data;
+const { title, tag, lede, story, stack, url, showPipelineDiagram, images } = project.data;
 
 type Block = { type: 'h2' | 'p'; text: string };
 const blocks: Block[] = story.split('\n\n').filter(Boolean).map((chunk: string) => {
@@ -43,6 +43,19 @@ const blocks: Block[] = story.split('\n\n').filter(Boolean).map((chunk: string) 
 
     <!-- Lede -->
     <p class="text-lg text-ink-muted leading-relaxed mb-10 font-medium">{lede}</p>
+
+    {images && images.length > 0 && (
+      <div class="space-y-4 mb-12">
+        {images.map(image => (
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="w-full h-auto rounded-xl border border-line"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    )}
 
     <!-- Pipeline diagram (WanderingBong only) -->
     {showPipelineDiagram && (

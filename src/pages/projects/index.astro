@@ -31,7 +31,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
           <p class="text-sm text-ink-muted leading-relaxed mb-5">
             Natural language search and agentic analytics for enterprises — ask questions of your data
-            in plain English and get governed, trustworthy answers. I worked on and launched
+            in plain English and get governed, trustworthy answers. I worked on and launched{' '}
             <strong class="text-ink">Spotter Analysts</strong>: every team gets its own AI analyst. Pick the
             certified data models, tools and instructions, and a Supply Chain Analyst answers in supply
             chain terms.
@@ -92,15 +92,14 @@ import Layout from '../../layouts/Layout.astro';
       <div class="pb-12 border-b border-line mb-12">
         <div class="grid md:grid-cols-2 gap-8 items-start">
           <div>
-            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Agent-connected CMS · MCP</p>
-            <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">Roami</h2>
+            <p class="text-[10px] text-ink-muted mb-3 tracking-wide">Agent-native CMS · Founder &amp; PM</p>
+            <h2 class="text-2xl font-black text-ink tracking-tightest mb-4">RoamiOS</h2>
             <p class="text-sm text-ink-muted leading-relaxed mb-5">
-              Started as a travel journaling app for myself. Became a CMS built for agents to run
-              directly — 72 MCP tools, a real commerce/affiliate pipeline, WanderingBong running on
-              it as Customer Zero.
+              I built RoamiOS because WanderingBong outgrew every CMS I put it on. The agent works
+              the queue and hands me drafts. I write and publish.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
-              {['MCP', 'Next.js', 'PostgreSQL', 'React Native'].map(t => (
+              {['MCP', 'TypeScript', 'Next.js', 'PostgreSQL'].map(t => (
                 <span class="text-[10px] bg-accent-subtle border border-accent-ring text-accent px-2 py-0.5 rounded-full">{t}</span>
               ))}
             </div>
@@ -112,9 +111,9 @@ import Layout from '../../layouts/Layout.astro';
           <a href="https://roami.xyz" target="_blank" rel="noreferrer"
             class="block rounded-xl overflow-hidden border border-line hover:border-accent transition-colors">
             <img
-              src="https://roami.xyz/images/hero-cover.jpg"
-              alt="Roami — travel journaling app"
-              class="w-full h-48 object-cover"
+              src="/assets/roami/dashboard.jpg"
+              alt="RoamiOS dashboard for the WanderingBong project: write queue, search velocity, content and media counts"
+              class="w-full h-auto"
             />
           </a>
         </div>

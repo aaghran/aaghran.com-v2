@@ -15,7 +15,7 @@ Principal PM at ThoughtSpot, building Spotter (natural language search and agent
 
 - [WanderingBong](https://aaghran.com/projects/wanderingbong/): Slow-travel blog (since 2015), now MCP-connected for content ops
 - [Eidetic](https://aaghran.com/projects/eidetic/): Capture-and-search memory — Chrome extension, mobile app, FastAPI + pgvector, MCP server
-- [Roami](https://aaghran.com/projects/roami/): Travel journaling app designed and shipped end-to-end
+- [RoamiOS](https://aaghran.com/projects/roami/): Agent-native CMS that runs WanderingBong. The agent works the queue; publishing stays with me.
 - [Worldview](https://aaghran.com/projects/worldview/): Live satellite globe from CelesTrak orbital data
 - [Lyaadh](https://aaghran.com/projects/lyaadh/): Brand around productive laziness (ShortCuts, Dokan, Escapes)
 - [BIRD → Snowflake](https://aaghran.com/projects/bird-loader/): Open-source Snowflake loader for the BIRD NL-to-SQL benchmark

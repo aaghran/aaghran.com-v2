@@ -1,10 +1,24 @@
 {
-  "title": "Roami",
-  "tag": "Agent-Connected CMS · MCP · Production",
-  "description": "A CMS and travel platform built for agents to run directly — 72 MCP tools, a real commerce/affiliate pipeline, WanderingBong running on it as Customer Zero. Started as a travel journaling app for myself; became infrastructure once I noticed agents did more with plain CRUD tools than with any AI feature I bolted on top.",
-  "lede": "Started as a travel journaling app for myself. Became a CMS built for agents to run, not just assist.",
-  "story": "Roami started as a travel journaling app. I wanted something built for how travel actually happens — fragments captured out of order, across time zones, with bad wifi — so I designed the full IA and data model myself (trips as clusters, not a flat photo feed) and took it to Thailand to test against a real multi-island trip before deciding what to build next.\n\nThe more interesting story turned out to be underneath it. WanderingBong — the travel blog I've run since 2015 — needed a real content backend, so I built one: a CMS, and an MCP server that now exposes 72 tools an agent can call directly to manage posts, tags, SEO, and affiliate links. WanderingBong became Customer Zero.\n\nThen the market told me something I didn't expect. I'd also built native AI features into the CMS itself — a blog analyzer, an idea generator, series tooling. They sat unused. What people (and agents) actually reached for were the plain CRUD tools an agent could call and reason over directly. So I retired the native AI generators and leaned all the way into the agent-first bet: Roami is a CMS built for Claude, or any MCP client, to run a blog through directly — not a chatbot bolted onto an admin panel.\n\nTwo tiers now: Log is the free capture layer — trips, journals, an archive that works even on old, untracked trips via a camera-roll retro-scan. Publish is the paid outcome — an agent drafts from your logs and your own past writing, you review, you publish. Publishing is hard-gated at the API on purpose; a human always has the last word.\n\nThe commerce side is real, not aspirational: WanderingBong's affiliate and gear pages run on this infrastructure today, agent tools can create and verify affiliate links directly, and the same pipeline now runs a second brand (Lyaadh) as its first outside tenant. Where it's still rough: the original travel-journaling premise — the Log/traveller side — is real but earlier-stage than the CMS side. Habit formation is a product problem I'm still working through.\n\nroami.xyz is the marketing site. app.roami.xyz is where you connect an agent.",
-  "stack": ["MCP", "TypeScript", "Node.js", "Next.js", "PostgreSQL", "Prisma", "React Native", "Expo", "Supabase"],
+  "title": "RoamiOS",
+  "tag": "Agent-native CMS · In beta",
+  "description": "I built RoamiOS because WanderingBong outgrew every CMS I put it on. The agent works the queue and hands me drafts. I write and publish.",
+  "lede": "I built RoamiOS because WanderingBong outgrew every CMS I put it on.",
+  "story": "After each post I was still doing the admin: tags, internal links, cover images, meta descriptions, and a pass through Search Console to decide what to write next.\n\nToday WanderingBong runs on it. My agent connects over MCP and works the queue: missing covers, thin metadata, untold trips, queries sitting just off page one. It hands me drafts to review. I write and publish. The agent cannot publish. That gate lives in the API, not in a setting I might forget to flip.\n\nThe screens above are WanderingBong on 31 October 2026. Search Console for the prior 28 days is in the shots as captured, including clicks down about 31 percent and a site health of 69.\n\nroami.xyz is the product site. app.roami.xyz is the desk.",
+  "stack": ["MCP", "TypeScript", "Next.js", "PostgreSQL", "Prisma"],
   "url": "https://roami.xyz",
-  "showPipelineDiagram": false
+  "showPipelineDiagram": false,
+  "images": [
+    {
+      "src": "/assets/roami/dashboard.jpg",
+      "alt": "RoamiOS dashboard for the WanderingBong project: write queue, search velocity, content and media counts"
+    },
+    {
+      "src": "/assets/roami/queue.jpg",
+      "alt": "RoamiOS queue: fixes waiting on the human, work ready to hand to an agent"
+    },
+    {
+      "src": "/assets/roami/seo.jpg",
+      "alt": "RoamiOS search performance: striking-distance queries from Search Console"
+    }
+  ]
 }
